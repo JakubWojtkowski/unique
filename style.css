@@ -1,0 +1,322 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #202020;
+}
+
+a {
+  text-decoration: none;
+  color: #202020;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h2 {
+  letter-spacing: -0.5px;
+  font-size: clamp(20px, 2.5vw, 28px);
+  margin-bottom: 64px;
+}
+
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.container {
+  min-height: calc(100vh - 70px);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+/* nav */
+
+nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 1rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  background-color: #202020;
+  height: 3px;
+  border-radius: 8px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  letter-spacing: -1.5px;
+}
+
+.login-btn {
+  border: 1px solid #202020;
+  border-radius: 6px;
+  padding: 8px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+}
+
+.login-btn:hover {
+  background-color: #202020;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+/* main */
+
+#main {
+  margin: 64px 0;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+}
+
+.post img {
+  opacity: 0.85;
+  border-radius: 4px;
+}
+
+.post-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 80%;
+}
+
+.post-text p {
+  margin-top: 8px;
+  line-height: 2;
+}
+
+.post-details {
+  color: #696969;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 16px;
+  justify-content: flex-start;
+}
+
+.post-details-avatar {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+/* about */
+
+.about {
+  display: flex;
+  gap: 32px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  gap: 32px;
+}
+
+.about-text span {
+  font-size: 1.1rem;
+  color: #202020;
+}
+
+.about img {
+  width: 50%;
+  border-radius: 40% 30% 70% 30% / 80% 30% 60% 30%;
+}
+
+/* form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+form input {
+  border: none;
+  padding: 8px 10px;
+  background: #f0f0f0;
+  height: 42px;
+  font-size: 16px;
+  letter-spacing: 0.25px;
+  width: 286px;
+  transition: all 250ms ease-in-out;
+  border-radius: 4px;
+}
+
+form input:focus {
+  outline: none;
+  border-bottom: 1px solid #202020;
+}
+
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background: #f0f0f0;
+  border-radius: 4px;
+  border: none;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+  background: #f5f5f5;
+  letter-spacing: 0.25px;
+}
+
+.submit-btn {
+  background: #202020;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.submit-btn:hover {
+  background: #f9f9f9;
+  color: #202020;
+}
+
+/* footer */
+
+footer {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer-main {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-main .footer-links {
+  display: flex;
+  gap: 32px;
+}
+
+footer .copyright {
+  font-size: 0.85rem;
+  margin: 16px auto;
+}
+
+/* media */
+
+@media only screen and (max-width: 1024px) {
+  .post-text {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .post {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about img {
+    width: 62vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    gap: 32px;
+  }
+
+  header i {
+    font-size: 24px;
+  }
+
+  nav {
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  nav .nav-links {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202020;
+  border-radius: 8px;
+}
